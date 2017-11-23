@@ -46,40 +46,6 @@ Arduino SimonSay
 1
 =====
 1.1
------Arduino SimonSay
-===============
-*****
-Оглавление / CONTENT
-----------
-1. русский
-
-    1. Вступление
-    2.Суть игры
-    3.Минусы этой версии
-    4.О следующих версиях
-    5.Что в репозитории
-    6.Требования программы
-    7.Создание устройства
-    8.Как изменить игру
-
-*****
-
-2. english (Google Translate)
-
-    1.Membership
-    2.The essence of the game
-    3.Cons this version
-    4.On the next versions
-    5.What's in the repository
-    6.The requirements of the program
-    7.The creation of the device
-    8.How to change the game
-
-*****
-
-1
-=====
-1.1
 -----
 
 Привет! Это мой первый проект на github, и первый проект на arduino
