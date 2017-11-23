@@ -4,6 +4,7 @@ Arduino SimonSay
 Оглавление / CONTENT
 ----------
 1. русский
+
     1. Вступление
     
     2.Суть игры
@@ -23,6 +24,7 @@ Arduino SimonSay
 *****
 
 2. english (Google Translate)
+
     1.Membership
     
     2.The essence of the game
