@@ -24,6 +24,7 @@
         delay(1000);
       }
     }
+    //привет! тут гитхаб типо))
     void fullmig(long a) {
       int b;
       while (a!=0) {
