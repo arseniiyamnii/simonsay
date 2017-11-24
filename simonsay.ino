@@ -1,26 +1,26 @@
-    int led1 = 8;
-    int button1 = 2;
-    int led2 = 9;
-    int button2 = 3;
+    int led = 8;
+    int button = 2;
+    int ledtwo = 9;
+    int buttontwo = 3;
     void setup() {
-      pinMode(led1, OUTPUT);
-      pinMode(button1, INPUT);
-      pinMode(led2, OUTPUT);
-      pinMode(button2, INPUT);
+      pinMode(led, OUTPUT);
+      pinMode(button, INPUT);
+      pinMode(ledtwo, OUTPUT);
+      pinMode(buttontwo, INPUT);
     }
     void mig(int a) {
-      digitalWrite(led1, LOW);
-      digitalWrite(led2, LOW);
+      digitalWrite(led, LOW);
+      digitalWrite(ledtwo, LOW);
       if (a == 1) {
-        digitalWrite(led1, HIGH);
+        digitalWrite(led, HIGH);
         delay(1000);
-        digitalWrite(led1, LOW);
+        digitalWrite(led, LOW);
         delay(1000);
       }
       if (a == 2){
-        digitalWrite(led2, HIGH);
+        digitalWrite(ledtwo, HIGH);
         delay(1000);
-        digitalWrite(led2, LOW);
+        digitalWrite(ledtwo, LOW);
         delay(1000);
       }
     }
@@ -35,13 +35,13 @@
     int sborskn(){
       int x=0;
       while (x==0) {
-        if (digitalRead(button1) == HIGH) {
+        if (digitalRead(button) == HIGH) {
           x=1;
-          while(digitalRead(button1) == HIGH){}
+          while(digitalRead(button) == HIGH){}
         }
-        if (digitalRead(button2) == HIGH) {
+        if (digitalRead(buttontwo) == HIGH) {
           x=2;
-          while(digitalRead(button2) == HIGH){}
+          while(digitalRead(buttontwo) == HIGH){}
         }
       }
       delay (250);
@@ -89,17 +89,17 @@
     void prov(long a, long b){
         if(a==b){
           for (int i = 5; i!=0 ;i--){
-            digitalWrite(led1, HIGH);
+            digitalWrite(led, HIGH);
             delay (250);
-            digitalWrite(led1, LOW);
+            digitalWrite(led, LOW);
             delay (250);
           }
         }
         else{
           for (int i = 5; i!=0 ;i--){
-            digitalWrite(led2, HIGH);
+            digitalWrite(ledtwo, HIGH);
             delay (250);
-            digitalWrite(led2, LOW);
+            digitalWrite(ledtwo, LOW);
             delay (250);
           }
           resetFunc();
@@ -114,7 +114,7 @@
         return b;
     }
   void loop(){
-    long a=1212;
+    long a=1222111221;
     int e=0;
     int c=dlinc(a);
     long b=0;
