@@ -76,7 +76,16 @@
       }
       return b;
     }
-    long chislodc(int i,long c){
+    long chislodc(int i, int *ua, int e){
+      int d[e];
+      int k=0;
+      int g=0;
+      while(e!=0){
+        e--;
+        ++k;
+        g++;
+        d[k]=*(ua+g);
+      }
       int b;
       int a=0;
       for (i; i!=0; i--){
@@ -114,15 +123,16 @@
         return b;
     }
   void loop(){
-    long a=1222111221;
+    int i=5;
+    int a[i]=[1,2,1,1,2],*ua;
     int e=0;
-    int c=dlinc(a);
+    int c=i;
     long b=0;
     long d=0;
     for (c;c!=0;c--){
       delay(2000);
       ++e;
-      b=chislodc(e,a);
+      b=chislodc(e,*ua,i);
       fullmig(b);
       d=sbor(e);
       d=pere(d);
