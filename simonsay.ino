@@ -124,7 +124,7 @@
     }
   void loop(){
     int i=5;
-    int a[i]=[1,2,1,1,2],*ua;
+    int a[i]=[1,2,1,1,2],*ua;//тут массив и его указатель
     int e=0;
     int c=i;
     long b=0;
