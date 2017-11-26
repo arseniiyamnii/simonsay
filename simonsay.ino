@@ -123,7 +123,7 @@
         return b;
     }
   void loop(){
-    int i=5;
+    int i=5;//тут количество элементов массива
     int a[i]=[1,2,1,1,2],*ua;//тут массив и его указатель
     int e=0;
     int c=i;
@@ -132,7 +132,7 @@
     for (c;c!=0;c--){
       delay(2000);
       ++e;
-      b=chislodc(e,*ua,i);
+      b=chislodc(e,*ua,i);//создание числа.Номер раунда, ук на массив,
       fullmig(b);
       d=sbor(e);
       d=pere(d);
