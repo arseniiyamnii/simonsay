@@ -87,9 +87,11 @@ int buttontwo = 3;
       return x;
     }
     void (* resetFunc) (void) = 0;
-    void prov(int *a, int *b){
-        if(a==b){
-          for (int i = 5; i!=0 ;i--){
+    void prov(int *a, int *b, int f){
+      int res = memcmp(a,b,f);
+//result = 1 т.е. всё совпало.
+        if(memcmp(a,b,f)==0){
+          for (int p = 5; p!=0 ;p--){
             digitalWrite(led, HIGH);
             delay (250);
             digitalWrite(led, LOW);
@@ -97,7 +99,7 @@ int buttontwo = 3;
           }
         }
         else{
-          for (int i = 5; i!=0 ;i--){
+          for (int p = 5; p!=0 ;p--){
             digitalWrite(ledtwo, HIGH);
             delay (250);
             digitalWrite(ledtwo, LOW);
@@ -105,7 +107,7 @@ int buttontwo = 3;
           }
           resetFunc();
         }
-    }
+      }
     /*
     начало проги
      */
@@ -120,7 +122,7 @@ void loop(){
     fullmig(c,i);
     int *sb=sbor(i);
     ++i;
-    //prov(ch,sb);
+    prov(ch,sb,i);
   }
  /////временно(проверяю, не выходит ли из цикла)
 }
