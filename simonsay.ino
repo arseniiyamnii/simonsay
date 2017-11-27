@@ -1,12 +1,12 @@
-    int led = 8;
-    int button = 2;
-    int ledtwo = 9;
-    int buttontwo = 3;
-    void setup() {
-      pinMode(led, OUTPUT);
-      pinMode(button, INPUT);
-      pinMode(ledtwo, OUTPUT);
-      pinMode(buttontwo, INPUT);
+int led = 8;
+int button = 2;
+int ledtwo = 9;
+int buttontwo = 3;
+ void setup() {
+   pinMode(led, OUTPUT);
+   pinMode(button, INPUT);
+   pinMode(ledtwo, OUTPUT);
+   pinMode(buttontwo, INPUT);
     }
     void mig(int a) {
       digitalWrite(led, LOW);
@@ -24,13 +24,52 @@
         delay(1000);
       }
     }
-    void fullmig(long a) {
-      int b;
-      while (a!=0) {
-        b = a % 10;
-        a = a/10;
-        mig(b);
+    void fullmig(int *a, int i){
+      int b=0;
+      int c=0;
+      int d=0;
+      while(b!=i){
+        c=a[b];
+        mig(c);
+       b++;
       }
+    }
+    int sizearr(int *a){ //Этой функцией мы узнаем длинну массива
+      int d=0;
+      while(a[d] != 3){
+        d++;
+      }
+      return d;
+    }
+    /*
+    число для раунда. Для этого нужно ввеси указатель на массив 
+    и номер раунда
+     */
+     int chislodc(int *a, int e){
+      int d[e];
+      int i;
+      while (i!=e){
+        d[i]=a[i];
+        i++;
+      }
+      int *g=d;
+      return g;
+    }
+    /*
+    сбор с кнопок
+     */
+     int sbor(int a){ //вводится номер раунда
+      int c[a];
+      int b=0;
+      int i=0;
+      for (a;a>0;a--) {
+        b=sborskn();
+        c[i]=b;
+        ++i;
+        b=0;
+      }
+      int *d=c;
+      return d;
     }
     int sborskn(){
       int x=0;
@@ -47,55 +86,8 @@
       delay (250);
       return x;
     }
-    long soed(long a, int b){
-      long c;
-      long d = 0;
-      while(d == 0){
-        d=(long)b;
-      }
-      c=a*10+d;
-      return c;
-    }
-    long sbor(int a){
-      long c=0;
-      int b=0;
-      int x;
-      for (a;a>0;a--) {
-        x=0;
-        b=sborskn();
-        c=soed(c,b);
-        b=0;
-      }
-      return c;
-    }
-    int dlinc(long a){
-      int b=0;
-      while(a!=0){
-        b++;
-        a/=10;
-      }
-      return b;
-    }
-    long chislodc(int i, int *ua, int e){
-      int d[e];
-      int k=0;
-      int g=0;
-      while(e!=0){
-        e--;
-        ++k;
-        g++;
-        d[k]=*(ua+g);
-      }
-      int b;
-      int a=0;
-      for (i; i!=0; i--){
-        a=a*10+c%10;
-        c/=10;
-      }
-      return a;
-    }
     void (* resetFunc) (void) = 0;
-    void prov(long a, long b){
+    void prov(int *a, int *b){
         if(a==b){
           for (int i = 5; i!=0 ;i--){
             digitalWrite(led, HIGH);
@@ -114,28 +106,23 @@
           resetFunc();
         }
     }
-    long pere(long a){
-        long b=0;
-        while (a!=0){
-          b=b*10+a%10;
-          a/=10;
-        }
-        return b;
-    }
-  void loop(){
-    int i=5;//тут количество элементов массива
-    int a[i]=[1,2,1,1,2],*ua;//тут массив и его указатель
-    int e=0;
-    int c=i;
-    long b=0;
-    long d=0;
-    for (c;c!=0;c--){
-      delay(2000);
-      ++e;
-      b=chislodc(e,*ua,i);//создание числа.Номер раунда, ук на массив,
-      fullmig(b);
-      d=sbor(e);
-      d=pere(d);
-      prov(b,d);
-    }
+    /*
+    начало проги
+     */
+void loop(){
+  int a[]={2,1,1,1,1,1,1,3};
+  int *c=a;
+  int d=sizearr(c);
+  int i=0;
+  while(i<d){
+    delay(1500);
+    i++;
+    int *ch=chislodc(c,i);
+    fullmig(c,i);
+    int *sb=sbor(i);
+    //prov(ch,sb);
+    delete ch;
+    delete sb;
   }
+}
+
