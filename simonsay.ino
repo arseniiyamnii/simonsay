@@ -113,23 +113,15 @@ void loop(){
   int a[]={2,1,1,1,1,1,1,3};
   int *c=a;
   int d=sizearr(c);
-  int i=0;
+  int i=1;
   while(i<d){
     delay(2000);
-    ++i;
     int *ch=chislodc(c,i);
     fullmig(c,i);
     int *sb=sbor(i);
+    ++i;
     //prov(ch,sb);
-    delete ch;
-    delete sb;
   }
  /////временно(проверяю, не выходит ли из цикла)
-  for (int i = 10; i!=0 ;i--){
-            digitalWrite(led, HIGH);
-            delay (250);
-            digitalWrite(led, LOW);
-            delay (250);
-          }
 }
 
