@@ -2,7 +2,7 @@ int led = 8;
 int button = 2;
 int ledtwo = 9;
 int buttontwo = 3;
- void setup() {
+   void setup() {
    pinMode(led, OUTPUT);
    pinMode(button, INPUT);
    pinMode(ledtwo, OUTPUT);
@@ -115,8 +115,8 @@ void loop(){
   int d=sizearr(c);
   int i=0;
   while(i<d){
-    delay(1500);
-    i++;
+    delay(2000);
+    ++i;
     int *ch=chislodc(c,i);
     fullmig(c,i);
     int *sb=sbor(i);
@@ -124,5 +124,12 @@ void loop(){
     delete ch;
     delete sb;
   }
+ /////временно(проверяю, не выходит ли из цикла)
+  for (int i = 10; i!=0 ;i--){
+            digitalWrite(led, HIGH);
+            delay (250);
+            digitalWrite(led, LOW);
+            delay (250);
+          }
 }
 
