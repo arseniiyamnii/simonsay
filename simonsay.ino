@@ -87,10 +87,22 @@ int buttontwo = 3;
       return x;
     }
     void (* resetFunc) (void) = 0;
-    void prov(int *a, int *b, int f){
-      int res = memcmp(a,b,f);
-//result = 1 т.е. всё совпало.
-        if(memcmp(a,b,f)==0){
+    void prov(int a){
+      /*int res=1;
+      int t[f];
+      int r[f];
+      for (int qwe = 0; qwe < f; ++qwe)
+    {
+      t[qwe]=a[qwe];
+      r[qwe]=b[qwe];
+    }
+      for (int i = 0; i < f; ++i)
+      {
+        if (a[i]!=b[i]){
+          res=0;
+        }
+      }*/
+        if(a==1){
           for (int p = 5; p!=0 ;p--){
             digitalWrite(led, HIGH);
             delay (250);
@@ -105,7 +117,7 @@ int buttontwo = 3;
             digitalWrite(ledtwo, LOW);
             delay (250);
           }
-          resetFunc();
+         // resetFunc();
         }
       }
     /*
@@ -119,10 +131,18 @@ void loop(){
   while(i<d){
     delay(2000);
     int *ch=chislodc(c,i);
-    fullmig(c,i);
+    fullmig(ch,i);
     int *sb=sbor(i);
+    fullmig(sb,i);
+    int ans=1;
+    for (int iq = 0; iq < i; ++iq)
+    {
+      if(ch[iq]==sb[iq]){
+        ans=0;
+      }
+    }
+    prov(ans);
     ++i;
-    prov(ch,sb,i);
   }
  /////временно(проверяю, не выходит ли из цикла).
 }
