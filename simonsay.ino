@@ -14,6 +14,8 @@ int buttontwo = 3;
    pinMode(button, INPUT);
    pinMode(ledtwo, OUTPUT);
    pinMode(buttontwo, INPUT);
+   Serial.begin(9600);
+   randomSeed(analogRead(0));
     }
 /*
 Реально нужные функции
@@ -96,9 +98,16 @@ int buttontwo = 3;
     начало проги
      */
 void loop(){
-  int a[]={2,1,1,1,1,1,1,3};
-  int *c=a;
-  int d=sizearr(c);//тут мы узнали длину массива
+  int d=10;
+  int a[d];
+  int cif=0;
+  for (int q = 0; q < d; ++q)
+  {
+    cif=0;
+    cif=random(1, 3);
+    a[q]=cif;
+    cif=0;
+  }
   int i=1;//тут начинается отсчет раундов
   while(i<d){
     delay(2000);
