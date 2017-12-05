@@ -1,3 +1,9 @@
+/*
+проба сделать без функций и указателей
+ */
+/*
+Это вступление
+ */
 int led = 8;
 int button = 2;
 int ledtwo = 9;
@@ -9,6 +15,9 @@ int buttontwo = 3;
    pinMode(ledtwo, OUTPUT);
    pinMode(buttontwo, INPUT);
     }
+/*
+Реально нужные функции
+ */
     void mig(int a) {
       digitalWrite(led, LOW);
       digitalWrite(ledtwo, LOW);
@@ -46,7 +55,7 @@ int buttontwo = 3;
     число для раунда. Для этого нужно ввеси указатель на массив 
     и номер раунда
      */
-     int chislodc(int *a, int e){
+     /*int * chislodc(int *a, int e){
       int d[e];
       int i;
       while (i!=e){
@@ -55,11 +64,11 @@ int buttontwo = 3;
       }
       int *g=d;
       return g;
-    }
+    }*/
     /*
     сбор с кнопок
      */
-     int sbor(int a){ //вводится номер раунда
+    /* int * sbor(int a){ //вводится номер раунда
       int c[a];
       int b=0;
       int i=0;
@@ -71,7 +80,7 @@ int buttontwo = 3;
       }
       int *d=c;
       return d;
-    }
+    }*/
     int sborskn(){
       int x=0;
       while (x==0) {
@@ -118,7 +127,7 @@ int buttontwo = 3;
             digitalWrite(ledtwo, LOW);
             delay (250);
           }
-         // resetFunc();
+         resetFunc();
         }
       }
     /*
@@ -127,18 +136,30 @@ int buttontwo = 3;
 void loop(){
   int a[]={2,1,1,1,1,1,1,3};
   int *c=a;
-  int d=sizearr(c);
-  int i=1;
+  int d=sizearr(c);//тут мы узнали длину массива
+  int i=1;//тут начинается отсчет раундов
   while(i<d){
     delay(2000);
-    int *ch=chislodc(c,i);
-    fullmig(ch,i);
-    int *sb=sbor(i);
-    fullmig(sb,i);
-    int ans=1;
-    for (int iq = 0; iq < i; ++iq)
+    //собираем число для раунда
+    int ch[i];
+    for (int k = 0; k < i; ++k)
     {
-      if(ch[iq]==sb[iq]){
+      ch[k]=a[k];
+    }
+    //промигаем это число
+    int *chuk=ch;
+    fullmig(chuk,i);
+    //начинаем сбор с кнопок
+    int sb[i];
+    for (int k = 0; k < i; ++k)
+    {
+      sb[k]=sborskn();
+    }
+    //начинаем сравнение их
+    int ans = 1;
+    for (int k = 0; k < i; ++k)
+    {
+      if(ch[k]!=sb[k]){
         ans=0;
       }
     }
@@ -147,4 +168,3 @@ void loop(){
   }
  /////временно(проверяю, не выходит ли из цикла).
 }
-
