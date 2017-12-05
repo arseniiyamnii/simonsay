@@ -52,35 +52,8 @@ int buttontwo = 3;
       return d;
     }
     /*
-    число для раунда. Для этого нужно ввеси указатель на массив 
-    и номер раунда
-     */
-     /*int * chislodc(int *a, int e){
-      int d[e];
-      int i;
-      while (i!=e){
-        d[i]=a[i];
-        i++;
-      }
-      int *g=d;
-      return g;
-    }*/
-    /*
     сбор с кнопок
      */
-    /* int * sbor(int a){ //вводится номер раунда
-      int c[a];
-      int b=0;
-      int i=0;
-      for (a;a>0;a--) {
-        b=sborskn();
-        c[i]=b;
-        ++i;
-        b=0;
-      }
-      int *d=c;
-      return d;
-    }*/
     int sborskn(){
       int x=0;
       while (x==0) {
@@ -96,22 +69,11 @@ int buttontwo = 3;
       delay (250);
       return x;
     }
+    /*
+    Проверка
+     */
     void (* resetFunc) (void) = 0;
     void prov(int a){
-      /*int res=1;
-      int t[f];
-      int r[f];
-      for (int qwe = 0; qwe < f; ++qwe)
-    {
-      t[qwe]=a[qwe];
-      r[qwe]=b[qwe];
-    }
-      for (int i = 0; i < f; ++i)
-      {
-        if (a[i]!=b[i]){
-          res=0;
-        }
-      }*/
         if(a==1){
           for (int p = 5; p!=0 ;p--){
             digitalWrite(led, HIGH);
