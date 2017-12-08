@@ -91,6 +91,10 @@ void mig(int a) {
          resetFunc();
         }
       }
+      int sborc(){
+        int inc = Serial.parseInt();
+        return inc;
+      }
 void loop() {
 int x=10000;
 //ожидание настройки игры. Если нет настройки, то игра начинается со стандартными параметрами
@@ -98,30 +102,46 @@ while (millis()<x)
 {
   if (Serial.available() > 0) {
   x=100000;
-    char inc = Serial.read();
-    int x;
-    for (int i = 0; i < 5; ++i)
-    {
-      if (inc == '1') {
-      x=x*10+1;
-    }
-    else if (inc == '3') {
-      x=x*10+3;
-    }
-    else if (inc == '2') {
-      x=x*10+2;
-    }
-    else if (inc == '4') {
-      x=x*10+4;
-    }
-    }
-    if (x==11111)
-    {
-      digitalWrite(led,HIGH);
-      delay(500);
-      digitalWrite(led,LOW);
-    }
-    
-  }}
-  
+    int a=sborc();
+    Serial.flush();
+    if (a==11)
+        {
+           Serial.println(a);
+          //delay(2000);
+          int b=0;
+          while(b==0){
+          b=sborc();}
+          if (b==12)
+          {
+            Serial.println(1112);
+            mig(1);
+          }
+          if (b==13)
+          {
+            Serial.println(1113);
+            mig(1);
+            mig(1);
+          }
+        
+        }
+    if (a==12)
+        {
+          Serial.println(a);
+          //delay(2000);
+          int b=0;
+          while(b==0){
+          b=sborc();}
+          if (b==12)
+          {Serial.println(1212);
+            mig(2);
+          }
+          if (b==13)
+          {
+            Serial.println(1213);
+            mig(2);
+            mig(2);
+          }
+          }
+        }
+  }
 }
