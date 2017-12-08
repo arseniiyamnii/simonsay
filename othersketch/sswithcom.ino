@@ -93,23 +93,35 @@ void mig(int a) {
       }
 void loop() {
 int x=10000;
+//ожидание настройки игры. Если нет настройки, то игра начинается со стандартными параметрами
 while (millis()<x)
 {
   if (Serial.available() > 0) {
   x=100000;
-    int incomingByte = Serial.read();
-    if (incomingByte == '1') {
-      digitalWrite(ledPin, HIGH);
+    char inc = Serial.read();
+    int x;
+    for (int i = 0; i < 5; ++i)
+    {
+      if (inc == '1') {
+      x=x*10+1;
     }
-    if (incomingByte == 'Q') {
-      digitalWrite(ledPin, LOW);
+    else if (inc == '3') {
+      x=x*10+3;
     }
-    if (incomingByte == '2') {
-      digitalWrite(ledPin2, HIGH);
+    else if (inc == '2') {
+      x=x*10+2;
     }
-    if (incomingByte == 'Q') {
-      digitalWrite(ledPin2, LOW);
+    else if (inc == '4') {
+      x=x*10+4;
     }
+    }
+    if (x==11111)
+    {
+      digitalWrite(led,HIGH);
+      delay(500);
+      digitalWrite(led,LOW);
+    }
+    
   }}
   
 }
