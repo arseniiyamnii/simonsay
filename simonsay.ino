@@ -37,7 +37,7 @@ int buttontwo = 3;
       }
       if (a == 2){
         delay(t);
-        digitalWrite(ledtwo, HIGH);
+        digitalWrite(ledtwo, HIGH);//
         delay(t);
         digitalWrite(ledtwo, LOW);
       }
