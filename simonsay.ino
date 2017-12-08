@@ -82,24 +82,24 @@ int buttontwo = 3;
      */
     void (* resetFunc) (void) = 0;
     void prov(int a, int t){
-    	int tm=250;
+    	int tm=285;
     	if (tm>75){
     		tm=tm-t*35;
     	}
         if(a==1){
           for (int p = 5; p!=0 ;p--){
             digitalWrite(led, HIGH);
-            delay (250);
+            delay (tm);
             digitalWrite(led, LOW);
-            delay (250);
+            delay (tm);
           }
         }
         else{
           for (int p = 5; p!=0 ;p--){
             digitalWrite(ledtwo, HIGH);
-            delay (250);
+            delay (tm);
             digitalWrite(ledtwo, LOW);
-            delay (250);
+            delay (tm);
           }
          resetFunc();
         }
