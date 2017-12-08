@@ -20,20 +20,25 @@ int buttontwo = 3;
 /*
 Реально нужные функции
  */
-    void mig(int a) {
+    void mig(int a, int i) {
       digitalWrite(led, LOW);
       digitalWrite(ledtwo, LOW);
+      int t=1000;
+      if(t>200){
+      	t=t-i*50;
+      }
+      else{t=200;}
       if (a == 1) {
-        delay(1000);
+        delay(t);
         digitalWrite(led, HIGH);
-        delay(1000);
+        delay(t);
         digitalWrite(led, LOW);
         
       }
       if (a == 2){
-        delay(1000);
+        delay(t);
         digitalWrite(ledtwo, HIGH);
-        delay(1000);
+        delay(t);
         digitalWrite(ledtwo, LOW);
       }
     }
@@ -43,7 +48,7 @@ int buttontwo = 3;
       int d=0;
       while(b!=i){
         c=a[b];
-        mig(c);
+        mig(c,i);
        b++;
       }
     }
