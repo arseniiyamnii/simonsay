@@ -108,6 +108,7 @@ while (millis()<x)
         {
            Serial.println(a);
           //delay(2000);
+          //
           int b=0;
           while(b==0){
           b=sborc();}
@@ -122,7 +123,6 @@ while (millis()<x)
             mig(1);
             mig(1);
           }
-        
         }
     if (a==12)
         {

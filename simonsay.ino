@@ -24,16 +24,17 @@ int buttontwo = 3;
       digitalWrite(led, LOW);
       digitalWrite(ledtwo, LOW);
       if (a == 1) {
+        delay(1000);
         digitalWrite(led, HIGH);
         delay(1000);
         digitalWrite(led, LOW);
-        delay(1000);
+        
       }
       if (a == 2){
+        delay(1000);
         digitalWrite(ledtwo, HIGH);
         delay(1000);
         digitalWrite(ledtwo, LOW);
-        delay(1000);
       }
     }
     void fullmig(int *a, int i){
