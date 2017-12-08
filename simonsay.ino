@@ -81,7 +81,11 @@ int buttontwo = 3;
     Проверка
      */
     void (* resetFunc) (void) = 0;
-    void prov(int a){
+    void prov(int a, int t){
+    	int tm=250;
+    	if (tm>75){
+    		tm=tm-t*35;
+    	}
         if(a==1){
           for (int p = 5; p!=0 ;p--){
             digitalWrite(led, HIGH);
@@ -140,7 +144,7 @@ void loop(){
         ans=0;
       }
     }
-    prov(ans);
+    prov(ans,i);
     ++i;
   }
  /////временно(проверяю, не выходит ли из цикла).
