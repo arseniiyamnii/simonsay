@@ -1,26 +1,6 @@
-/*
-проба сделать без функций и указателей
- */
-/*
-Это вступление
- */
-int led = 8;
-int button = 2;
-int ledtwo = 9;
-int buttontwo = 3;
-//testcommit1
-   void setup() {
-   pinMode(led, OUTPUT);
-   pinMode(button, INPUT);
-   pinMode(ledtwo, OUTPUT);
-   pinMode(buttontwo, INPUT);
-   Serial.begin(9600);
-   randomSeed(analogRead(0));
-    }
-/*
-Реально нужные функции
- */
-    void mig(int a, int i) {
+#include "pins.h"//файл с переменными пинов
+#include "var.h"//файл в который надо будет занести переменные
+void mig(int a, int i) {
       digitalWrite(led, LOW);
       digitalWrite(ledtwo, LOW);
       int t=1000;
@@ -104,9 +84,14 @@ int buttontwo = 3;
          resetFunc();
         }
       }
-    /*
-    начало проги
-     */
+ void setup() {
+   pinMode(led, OUTPUT);
+   pinMode(button, INPUT);
+   pinMode(ledtwo, OUTPUT);
+   pinMode(buttontwo, INPUT);
+   Serial.begin(9600);
+   randomSeed(analogRead(0));
+    }
 void loop(){
   int d=10;
   int a[d];
