@@ -20,7 +20,7 @@ int buttontwo = 3;
 /*
 Реально нужные функции
  */
-    void mig(int a, int i, int speedp) {
+    void mig(int a, int i, int speedp){
       digitalWrite(led, LOW);
       digitalWrite(ledtwo, LOW);
       int t=speedp;
@@ -124,7 +124,12 @@ void loop(){
   int speedr=2000;
   while (rtime<time){
   	rtime=millis();
-  	if (Serial.available() > 0) {
+  	if (Serial.available()>0)
+  	{
+  		rtime=0;
+  	}
+  	while(rtime=0){
+  		Serial.flush();
   		Serial.println("Добро пожаловать в интерфейс редактирования игры!");
   		Serial.println("Веедите номер настройки, которую хотите изменить");
   		Serial.println("1 - Изменение кол-ва раундов");
@@ -132,7 +137,6 @@ void loop(){
   		Serial.println("3 - Изменение промежутка между раундами");
   		Serial.println("Жду команды");
   		Serial.println("----------------------------");
-  		rtime=1;
   		int a=sborc();
   		int b=0;
   		Serial.flush();
@@ -174,7 +178,7 @@ void loop(){
   			Serial.println("Напиши свой вариант");
   			b=0;
   			while(b==0){
-  			b=speedr();}
+  			b=sborc();}
   			speedr=b;
   			Serial.print("Теперь промежуток равен ");
   			Serial.print(speedr/1000);
@@ -188,7 +192,7 @@ void loop(){
   			Serial.println("2=нет");
   			b=0;
   			while(b==0){
-  			b=speedr();}
+  			b=sborc();}
   			if (b==0)
   			{
   				Serial.println("Продолжение настройки");
@@ -199,9 +203,7 @@ void loop(){
   				delay(3000);
   				rtime=20000;
   			}
-  		}
-
-
+  		}}
   }
   int d=kolr;
   int a[d];
@@ -240,7 +242,5 @@ void loop(){
       }
     }
     prov(ans,i);
-    ++i;
-  }
+    ++i;}}
  ////временно(проверяю, не выходит ли из цикла).
-}
